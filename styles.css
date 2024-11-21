@@ -17,6 +17,7 @@ h1 {
 
 h3 {
     color: #555;
+    text-align: center;
 }
 
 form {
@@ -26,6 +27,35 @@ form {
     border-radius: 5px;
     max-width: 500px;
     margin: 0 auto 20px;
+}
+
+form p,
+form label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+form label,
+form input {
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    display: block;
+    margin: 20px auto; /* Center the button */
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 form label {
