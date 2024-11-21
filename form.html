@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Enrollment Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Student Enrollment Form</h1>
+    </header>
+
+    <section>
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Fill in the form fields.</li>
+            <li>Check your interests.</li>
+            <li>Click "Enroll Now" to submit.</li>
+        </ol>
+    </section>
+
+    <section>
+        <form action="#" method="post">
+            <h3>Enrollment Form</h3>
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full_name" required><br>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="1" required><br>
+
+            <p>Sex:</p>
+            <input type="radio" id="male" name="sex" value="Male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="sex" value="Female" required>
+            <label for="female">Female</label><br>
+
+            <label for="course">Course Options:</label>
+            <select id="course" name="course" required>
+                <option value="BSIT">BSIT</option>
+                <option value="BSSW">BSSW</option>
+                <option value="BSPA">BSPA</option>
+            </select><br>
+
+            <p>Interests:</p>
+            <input type="checkbox" id="web-dev" name="interests" value="Web Development">
+            <label for="web-dev">Web Development</label>
+            <input type="checkbox" id="data-science" name="interests" value="Data Science">
+            <label for="data-science">Data Science</label>
+            <input type="checkbox" id="networking" name="interests" value="Networking">
+            <label for="networking">Networking</label>
+            <input type="checkbox" id="graphic-design" name="interests" value="Graphic Design">
+            <label for="graphic-design">Graphic Design</label><br>
+
+            <button type="submit">Enroll Now</button>
+        </form>
+    </section>
+
+    <section>
+        <h3>Student List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Sex</th>
+                    <th>Course</th>
+                    <th>Interests</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Jane Doe</td>
+                    <td>jane.doe@example.com</td>
+                    <td>20</td>
+                    <td>Female</td>
+                    <td>BSIT</td>
+                    <td>Web Development, Graphic Design</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>John Smith</td>
+                    <td>john.smith@example.com</td>
+                    <td>22</td>
+                    <td>Male</td>
+                    <td>BSSW</td>
+                    <td>Data Science</td>
+                </tr>
+                <!-- Add more rows here -->
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
