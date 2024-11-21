@@ -36,7 +36,7 @@ Repository Structure
 ```
 student-enrollment/
 │
-├── enrollment_form.html   # Main HTML file containing the structure of the webpage
+├── index.html             # Main HTML file containing the structure of the webpage
 ├── styles.css             # External CSS file for styling
 └── README.md              # Project description and documentation
 ```
