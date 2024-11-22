@@ -33,27 +33,99 @@
             <input type="number" id="age" name="age" min="1" required><br>
 
             <p>Sex:</p>
-            <input type="radio" id="male" name="sex" value="Male" required>
             <label for="male">Male</label>
-            <input type="radio" id="female" name="sex" value="Female" required>
+            <input type="radio" id="male" name="sex" value="Male" required>
             <label for="female">Female</label><br>
+            <input type="radio" id="female" name="sex" value="Female" required>
 
             <label for="course">Course Options:</label>
-            <select id="course" name="course" required>
+            <select id="course" name="course" required onchange="updateInterests()">
                 <option value="BSIT">BSIT</option>
                 <option value="BSSW">BSSW</option>
                 <option value="BSPA">BSPA</option>
+                <option value="BSE">BSE</option>
+                <option value="DHRS">DHRS</option>
+                <option value="ABELS">ABELS</option>
             </select><br>
 
             <p>Interests:</p>
-            <input type="checkbox" id="web-dev" name="interests" value="Web Development">
-            <label for="web-dev">Web Development</label>
-            <input type="checkbox" id="data-science" name="interests" value="Data Science">
-            <label for="data-science">Data Science</label>
-            <input type="checkbox" id="networking" name="interests" value="Networking">
-            <label for="networking">Networking</label>
-            <input type="checkbox" id="graphic-design" name="interests" value="Graphic Design">
-            <label for="graphic-design">Graphic Design</label><br>
+            <div id="interest-container">
+            </div>
+
+            <script>
+                function updateInterests() {
+                    const course = document.getElementById("course").value;
+                    const interestContainer = document.getElementById("interest-container");
+                    
+                    interestContainer.innerHTML = "";
+
+                    let interests = [];
+
+                    switch(course) {
+                        case "BSIT":
+                            interests = [
+                                {id: "web-dev", label: "Web Development", value: "Web Development"},
+                                {id: "data-science", label: "Data Science", value: "Data Science"},
+                                {id: "networking", label: "Networking", value: "Networking"},
+                                {id: "graphic-design", label: "Graphic Design", value: "Graphic Design"}
+                            ];
+                            break;
+                        case "BSSW":
+                            interests = [
+                                {id: "social-work", label: "Social Work", value: "Social Work"},
+                                {id: "counseling", label: "Counseling", value: "Counseling"}
+                            ];
+                            break;
+                        case "BSPA":
+                            interests = [
+                                {id: "public-admin", label: "Public Administration", value: "Public Administration"},
+                                {id: "community-dev", label: "Community Development", value: "Community Development"}
+                            ];
+                            break;
+                        case "BSE":
+                            interests = [
+                                {id: "engineering", label: "Electrical Engineering", value: "Electrical Engineering"},
+                                {id: "mechanical", label: "Mechanical Engineering", value: "Mechanical Engineering"}
+                            ];
+                            break;
+                        case "DHRS":
+                            interests = [
+                                {id: "human-resources", label: "Human Resource Management", value: "Human Resource Management"},
+                                {id: "personnel-admin", label: "Personnel Administration", value: "Personnel Administration"}
+                            ];
+                            break;
+                        case "ABELS":
+                            interests = [
+                                {id: "education", label: "Education", value: "Education"},
+                                {id: "special-ed", label: "Special Education", value: "Special Education"}
+                            ];
+                            break;
+                        default:
+                            interests = [];
+                    }
+
+                    interests.forEach(interest => {
+                        const label = document.createElement("label");
+                        label.setAttribute("for", interest.id);
+                        label.textContent = interest.label;
+                        
+                        const checkbox = document.createElement("input");
+                        checkbox.type = "checkbox";
+                        checkbox.id = interest.id;
+                        checkbox.name = "interests";
+                        checkbox.value = interest.value;
+
+                        interestContainer.appendChild(label);
+                        interestContainer.appendChild(checkbox);
+                        interestContainer.appendChild(document.createElement("br"));
+                    });
+                }
+
+                window.onload = function() {
+                    updateInterests();
+                }
+            </script>
+
 
             <button type="submit">Enroll Now</button>
         </form>
@@ -76,23 +148,96 @@
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>Jane Doe</td>
-                    <td>jane.doe@example.com</td>
-                    <td>20</td>
+                    <td>Ana Santos</td>
+                    <td>ana.santos@gmail.com</td>
+                    <td>21</td>
                     <td>Female</td>
                     <td>BSIT</td>
-                    <td>Web Development, Graphic Design</td>
+                    <td>Web Development, Networking</td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>John Smith</td>
-                    <td>john.smith@example.com</td>
-                    <td>22</td>
+                    <td>Mark Reyes</td>
+                    <td>mark.reyes@gmail.com</td>
+                    <td>23</td>
                     <td>Male</td>
+                    <td>BSIT</td>
+                    <td>Web Development, Graphic</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Maria Clara Ramos</td>
+                    <td>maria.clara.ramos@yahoo.com</td>
+                    <td>20</td>
+                    <td>Female</td>
                     <td>BSSW</td>
+                    <td>Social Work, Counseling</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Joseph Bautista</td>
+                    <td>joseph.bautista@gmail.com</td>
+                    <td>24</td>
+                    <td>Male</td>
+                    <td>BSPA</td>
+                    <td>Public Administration, Community Development</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Catherine dela Cruz</td>
+                    <td>catherine.delacruz@outlook.com</td>
+                    <td>21</td>
+                    <td>Female</td>
+                    <td>BSA</td>
+                    <td>Accounting, Auditing</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Rafael Garcia</td>
+                    <td>rafael.garcia@yandex.com</td>
+                    <td>23</td>
+                    <td>Male</td>
+                    <td>BSE</td>
+                    <td>Electrical Engineering</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Kristine Lim</td>
+                    <td>kristine.lim@gmail.com</td>
+                    <td>22</td>
+                    <td>Female</td>
+                    <td>BSIT</td>
                     <td>Data Science</td>
                 </tr>
-                <!-- Add more rows here -->
+                <tr>
+                    <td>8</td>
+                    <td>Kevin Tan</td>
+                    <td>kevin.tan@yandex.com</td>
+                    <td>25</td>
+                    <td>Male</td>
+                    <td>BSSW</td>
+                    <td>Social Services, Community Work</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Jasmin Garcia</td>
+                    <td>jasmin.garcia@gmail.com</td>
+                    <td>19</td>
+                    <td>Female</td>
+                    <td>ABELS</td>
+                    <td>Education, Special Education</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Jericho Cruz</td>
+                    <td>jericho.cruz@outlook.com</td>
+                    <td>22</td>
+                    <td>Male</td>
+                    <td>DHRS</td>
+                    <td>Human Resource Management, Personnel Administration</td>
+                </tr>
+                
+                
             </tbody>
         </table>
     </section>
