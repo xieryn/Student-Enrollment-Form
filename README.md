@@ -1,3 +1,3 @@
 # Student-Enrollment-Form
 
-This is a student enrollment form structure for ou final quiz 3
+This is a student enrollment form structure for our final quiz 3
