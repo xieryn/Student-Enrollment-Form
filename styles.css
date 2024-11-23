@@ -6,22 +6,42 @@ body {
     color: #333;
 }
 
+/*first header*/
 header {
+    background-color: #333; 
+    color: white; 
+    padding: 20px;
     text-align: center;
+    border-radius: 5px;
+    max-width: 500px;
+    margin: 0 auto 20px;
+}
+
+header h1 {
+    font-size: 2.5em; 
+    margin: 0;
+}
+
+/*instruction itu*/
+.instructions {
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 20px;
+    border-radius: 8px; 
+    width: 80%; 
+    margin: 20px auto; 
+    border-radius: 5px;
+    max-width: 500px;
+    margin: 0 auto 20px;
+}
+
+.instructions h3 {
+    font-size: 1.5em; 
+    margin-bottom: 10px;
+}
+
+.instructions ol {
     margin-bottom: 20px;
-}
-
-h1 {
-    color: #4CAF50;
-}
-
-h3 {
-    color: #555;
-    text-align: center;
-}
-ol {
-    text-align: center;
-    list-style-position: inside;
 }
 
 form {
@@ -89,20 +109,62 @@ form button:hover {
     background-color: #45a049;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
+/*sec header*/
+h3 {
+    text-align: center;
 }
+
+
+/*for table*/
+table {
+    width: 70%; 
+    border-collapse: collapse;
+    margin: 20px auto; 
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 
 table th,
 table td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 6px 10px; 
     text-align: left;
+    font-size: 14px; 
 }
 
+
 table th {
-    background-color: #f2f2f2;
-    color: #333;
+    background-color: #4CAF50;
+    color: white; 
+    font-weight: bold;
 }
+
+table tr {
+    background-color: #ffffff; 
+    color: #333; 
+}
+
+table tr:hover {
+    background-color: #e0e0e0;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9; 
+}
+
+table td:focus {
+    outline: 2px solid #4CAF50;
+}
+
+@media screen and (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    table th, table td {
+        padding: 5px; 
+    }
+}
+
